@@ -97,9 +97,9 @@ Create cluster
 ```
 Foundation installs software. Expand Cluster adds nodes. DiscoveryOS is only for detection. Bare-metal needs Foundation first.
 ```
-```
-SIMPLE FLOWCHART (How to add a node)
-```
+
+**SIMPLE FLOWCHART (How to add a node)**
+
 ```
 Start
   |
