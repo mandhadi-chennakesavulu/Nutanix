@@ -26,3 +26,74 @@ Foundation tool availability
 Foundation can be downloaded from Nutanix (Foundation portal)
 ```
 
+```
+Part 1: Adding nodes to an existing cluster
+
+If a Nutanix cluster is already running
+You must NOT use Foundation to add new nodes.
+Use Prism → Expand Cluster option
+Prism is the Nutanix management UI.
+Expand Cluster is the correct and supported method.
+What Expand Cluster can do
+It can re-image a node if:
+The node’s hypervisor/AOS version is different from the cluster
+OR the node is running DiscoveryOS only
+DiscoveryOS
+A temporary OS used to discover and prepare new nodes
+Prism can re-image DiscoveryOS into the correct hypervisor + AOS
+```
+```
+Part 2: Factory-installed software on Nutanix nodes
+
+Nodes come pre-installed from the factory
+Nutanix and OEM partners install software before shipping
+For shipments inside the USA
+Nodes usually arrive with:
+AHV hypervisor
+AOS installed
+
+For OEM vendor nodes
+The hypervisor may vary (vendor choice)
+But AOS is always installed
+```
+
+```
+1️⃣ How nodes are shipped
+Case A: USA shipment
+Node already has:
+Hypervisor
+AOS
+✅ Almost ready to use
+
+Case B: Outside USA shipment
+Node has only DiscoveryOS
+DiscoveryOS = temporary, very small OS
+Purpose: just to detect the node
+❌ Cannot join cluster yet
+
+Case C: Non-OEM vendor node
+Node has nothing installed
+No OS at all
+This is called bare-metal
+```
+
+```
+👉 DiscoveryOS node + existing cluster
+Use Prism → Expand Cluster
+It will install hypervisor + AOS
+Node joins cluster ✅
+
+👉 Bare-metal node + existing cluster
+Use Foundation → install hypervisor + AOS
+Then use Prism → Expand Cluster
+Node joins cluster ✅
+
+👉 New cluster (no cluster exists yet)
+Use Foundation
+Image all nodes
+Create cluster
+```
+
+```
+Foundation installs software. Expand Cluster adds nodes. DiscoveryOS is only for detection. Bare-metal needs Foundation first.
+```
