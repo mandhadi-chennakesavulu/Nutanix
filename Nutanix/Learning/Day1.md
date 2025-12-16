@@ -62,4 +62,6 @@ ESXI = Switch and AHV = Bridge [ vir-bro , bro ]
 br0 without ip = bridge
 br0 with ip is = hypervisor
 ```
-![alt text](image-1.png)
+![alt text](images/day1.jpeg)
+
+![alt text](<images/Screenshot 2025-12-16 160804.png>)
