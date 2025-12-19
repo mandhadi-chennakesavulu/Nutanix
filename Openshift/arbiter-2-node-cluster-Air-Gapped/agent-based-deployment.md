@@ -148,3 +148,9 @@ openshift-install agent create image
 openshift-install agent wait-for bootstrap-complete --log-level=debug
 openshift-install agent wait-for bootstrap-complete --log-level=info
 ```
+
+```
+if any issue faced during the booting like failue ssh into that node and type:
+
+journalctl -xe -f
+```
