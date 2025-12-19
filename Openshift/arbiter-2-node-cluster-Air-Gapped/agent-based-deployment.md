@@ -146,4 +146,5 @@ openshift-install agent create image
 
 ```
 openshift-install agent wait-for bootstrap-complete --log-level=debug
+openshift-install agent wait-for bootstrap-complete --log-level=info
 ```
