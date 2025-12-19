@@ -144,3 +144,6 @@ sudo dnf install -y nmstate
 openshift-install agent create image
 ```
 
+```
+openshift-install agent wait-for bootstrap-complete --log-level=debug
+```
