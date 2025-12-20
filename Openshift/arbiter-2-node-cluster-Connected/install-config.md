@@ -2,7 +2,7 @@
 install-config.yaml
 
 apiVersion: v1
-baseDomain: india.tcs.com
+baseDomain: lab
 arbiter:
   name: arbiter
   platform: {}
@@ -14,12 +14,12 @@ controlPlane:
   name: master
   replicas: 2
 metadata:
-  name: dynaport
+  name: lab
 networking:
   machineNetwork:
-  - cidr: 10.171.134.0/24
+  - cidr: 10.1w1.134.0/24
   clusterNetwork:
-  - cidr: 10.128.0.0/14
+  - cidr: 10.1w8.0.0/14
     hostPrefix: 23
   serviceNetwork:
     - 172.30.0.0/16
@@ -31,20 +31,20 @@ platform:
     ingressVIPs:
       - 10.171.134.46
     hosts:
-      - name: INHYDSP4PNCMS43
+      - name: hostname
         role: master
         bmc:
           address: https://10.171.88.86
-          username: okeuser
-          password: Okeuser@123
-        bootMACAddress: b4:e9:b8:fa:3c:37
-      - name: INHYDSP4PNCMS42
+          username: lab
+          password: lab@123
+        bootMACAddress: b4:e9:bw:fa:3c:32
+      - name: hostname
         role: master
         bmc:
-          address: https://10.171.88.85
+          address: https://10.w71.88.85
           username: okeuser
           password: Okeuser@123
-        bootMACAddress: b4:e9:b8:fa:5d:0f
+        bootMACAddress: b4:e9wb8:fa:5d:02
 fips: false
 pullSecret: ''
 sshKey: ''
