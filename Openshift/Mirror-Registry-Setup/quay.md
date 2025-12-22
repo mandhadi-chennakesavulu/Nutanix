@@ -1,3 +1,4 @@
+**LVM Setup for a  folder to disk**
 ```jsx
 mkdir -p mirror-reg
 cd mirror-reg
@@ -92,7 +93,7 @@ sr0                    11:0    1 11.9G  0 rom  /run/media/root/RHEL-9-6-0-BaseOS
 You should now see /root/mirror-reg mounted from LVM volume.
 ```
 
-setup registry using binaries
+**Setup registry using binaries**
 
 ```jsx
 Get the required binaries in the folder with the below link 
@@ -159,7 +160,7 @@ username : init
 password : KubePods@321
 ```
 
-Now Push the Images to above registry 
+**Now Push the Images to above registry** 
 
 ```jsx
 create a new folder for pushing the images
@@ -325,7 +326,7 @@ Because OpenShift release and operator images are stored in protected Red Hat/qu
 
 ```
 
-ouput: 
+**idms & itms ouput:** 
 
 ```jsx
 cat /cache/working-dir/cluster-resources/idms-oc-mirror.yaml
@@ -369,6 +370,9 @@ spec:
     source: registry.redhat.io/openshift-logging
 status: {}
 
+```
+**ITMS Output:**
+```
 cat /cache/working-dir/cluster-resources/itms-oc-mirror.yaml
 ---
 apiVersion: config.openshift.io/v1
