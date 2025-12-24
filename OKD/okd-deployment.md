@@ -148,8 +148,26 @@ hosts:
             next-hop-interface: bond0.20
 
 ```
+
+**add /ete/hosts**
+```
+190.170.20.172  bastion.sno-okd.lab.kuberox.net
+190.170.20.174  master.sno-okd.lab.kuberox.net
+190.170.20.174  api.sno-okd.lab.kuberox.net
+190.170.20.174  api-int.sno-okd.lab.kuberox.net
+190.170.20.173  *.apps.sno-okd.lab.kuberox.net
+
+```
+
+
 ```
 openshift-install agent create image
+```
+**Validated from bastion**
+```
+openshift-install agent wait-for install-complete
+openshift-install agent wait-for bootstrap-complete
+
 ```
 
 
