@@ -65,6 +65,8 @@ networking:
   clusterNetwork:
   - cidr: 10.128.0.0/14
     hostPrefix: 23
+  machineNetwork:
+  - cidr: 190.170.40.0/22
   serviceNetwork:
   - 172.30.0.0/16
 platform:
