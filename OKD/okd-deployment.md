@@ -1,4 +1,7 @@
 ```
+https://github.com/okd-project/okd/releases?page=7
+```
+```
 export OKD_VERSION=4.21.0-okd-scos.ec.9
 export ARCH=x86_64
 
