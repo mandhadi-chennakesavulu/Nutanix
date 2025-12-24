@@ -55,10 +55,16 @@ baseDomain: lab.kuberox.net
 metadata:
   name: sno-okd
 compute:
-- name: worker
-  replicas: 0
+  - architecture: amd64
+    hyperthreading: Enabled
+    name: worker
+    platform: {}
+    replicas: 0
 controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
   name: master
+  platform: {}
   replicas: 1
 networking:
   networkType: OVNKubernetes
@@ -66,7 +72,7 @@ networking:
   - cidr: 10.128.0.0/14
     hostPrefix: 23
   machineNetwork:
-  - cidr: 190.170.40.0/22
+  - cidr: 190.170.20.0/23
   serviceNetwork:
   - 172.30.0.0/16
 platform:
@@ -158,8 +164,6 @@ hosts:
 190.170.20.173  *.apps.sno-okd.lab.kuberox.net
 
 ```
-
-
 ```
 openshift-install agent create image
 ```
@@ -169,6 +173,7 @@ openshift-install agent wait-for install-complete
 openshift-install agent wait-for bootstrap-complete
 
 ```
+![alt text](image.png)
 
 
 
