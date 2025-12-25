@@ -216,20 +216,46 @@ ip link show br10
 ✅ What YOU should do:
 
 ✔ Bond eno3 + eno4
-
 ✔ Create VLANs on bond
-
 ✔ Create bridges per VLAN
-
 ✔ Use NADs for VM attachment
-
 ✔ Keep eno1/eno2 isolated for OCP
 
 ❌ What NOT to do:
-
 Don’t mix OCP traffic and VM traffic
-
 Don’t attach VMs directly to NICs
-
 Don’t skip bridges
+```
+```
+Physical NICs
+  eno3 + eno4
+        │
+        ▼
+Bond (Active-Backup)
+  bond1
+        │
+        ▼
+VLAN Interfaces
+  bond1.10
+  bond1.20
+  bond1.30
+  bond1.40
+        │
+        ▼
+Linux Bridges
+  br10
+  br20
+  br30
+  br40
+        │
+        ▼
+NetworkAttachmentDefinitions (NAD)
+  nad10-network
+  nad20-network
+  nad30-network
+  nad40-network
+        │
+        ▼
+OpenShift Virtualization VMs / MTV
+
 ```
